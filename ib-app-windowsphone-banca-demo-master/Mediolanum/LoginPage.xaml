@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Mediolanum.LoginPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cr="clr-namespace:Mediolanum.CustomRenderer;assembly=Mediolanum"
+             xmlns:local="clr-namespace:Mediolanum;assembly=Mediolanum"
+             BackgroundColor="{StaticResource BlueMediolanum}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="BlueMediolanum">#289bd4</Color>
+            <Color x:Key="PlaceholderColor">#464646</Color>
+            <Color x:Key="SeparatorColor">#a1a1a1</Color>
+            <Color x:Key="DarkBlueMediolanum">#192d6b</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout HorizontalOptions="FillAndExpand"
+                 Orientation="Vertical"
+                 Spacing="0"
+                 VerticalOptions="FillAndExpand">
+
+        <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+            <Image x:Name="LogoBg"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=Constant,
+                                                                     Constant=0}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=Constant,
+                                                                     Constant=0}"
+                   Source="Images/logo_bg.png" />
+            <Image RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                     Property=Width,
+                                                                     Factor=0.2}"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                     Property=Y,
+                                                                     ElementName=LogoBg,
+                                                                     Constant=40}"
+                   Source="Images/logo.png"
+                   WidthRequest="240" />
+        </RelativeLayout>
+
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     Orientation="Vertical"
+                     Padding="15,0"
+                     Spacing="0"
+                     VerticalOptions="CenterAndExpand">
+
+            <ContentView HorizontalOptions="End"
+                         Padding="5"
+                         VerticalOptions="Center">
+                <Label FontSize="18"
+                       HorizontalTextAlignment="End"
+                       Text="Hai dimenticato i codici?" />
+            </ContentView>
+
+            <StackLayout BackgroundColor="White"
+                         Orientation="Vertical"
+                         Padding="15,0"
+                         Spacing="0">
+
+                <Grid ColumnSpacing="25"
+                      HorizontalOptions="CenterAndExpand"
+                      Padding="20,20,20,15"
+                      RowSpacing="0"
+                      VerticalOptions="Start">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="4" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <cr:LoginEntry Grid.Row="0"
+                                   Grid.Column="0"
+                                   FontSize="100"
+                                   Keyboard="Numeric"
+                                   Placeholder="Codice Cliente"
+                                   PlaceholderColor="{StaticResource PlaceholderColor}"
+                                   TextSize="100" />
+                    <Image Grid.Row="0"
+                           Grid.RowSpan="2"
+                           Grid.Column="1"
+                           Source="Images/cod_cliente_icon.png"
+                           VerticalOptions="End" />
+                    <BoxView Grid.Row="1"
+                             Grid.Column="0"
+                             Color="{StaticResource SeparatorColor}" />
+                </Grid>
+
+                <Grid ColumnSpacing="25"
+                      HorizontalOptions="CenterAndExpand"
+                      Padding="20,20,20,15"
+                      RowSpacing="0"
+                      VerticalOptions="Start">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="4" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <cr:LoginEntry Grid.Row="0"
+                                   Grid.Column="0"
+                                   IsPassword="true"
+                                   Keyboard="Numeric"
+                                   Placeholder="Primo Codice Segreto"
+                                   PlaceholderColor="{StaticResource PlaceholderColor}" />
+                    <Image Grid.Row="0"
+                           Grid.RowSpan="2"
+                           Grid.Column="1"
+                           Source="Images/cod_segreto_icon.png"
+                           VerticalOptions="End" />
+                    <BoxView Grid.Row="1"
+                             Grid.Column="0"
+                             Color="{StaticResource SeparatorColor}" />
+                </Grid>
+
+            </StackLayout>
+
+            <ContentView BackgroundColor="{StaticResource DarkBlueMediolanum}" Padding="0,10">
+                <Label FontSize="25"
+                       HorizontalOptions="FillAndExpand"
+                       HorizontalTextAlignment="Center"
+                       Text="Accedi"
+                       TextColor="White"
+                       VerticalOptions="CenterAndExpand"
+                       VerticalTextAlignment="Center" />
+            </ContentView>
+
+        </StackLayout>
+
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="End">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Column="0"
+                         Orientation="Vertical"
+                         Padding="10,0,10,30">
+                <Image HeightRequest="30"
+                       HorizontalOptions="Center"
+                       Source="Images/num_utili_icon.png"
+                       VerticalOptions="Center" />
+                <Label FontSize="16"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="Numeri Utili"
+                       VerticalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout Grid.Column="1"
+                         Orientation="Vertical"
+                         Padding="10,0,10,30">
+                <Image HeightRequest="30"
+                       HorizontalOptions="Center"
+                       Source="Images/sportelli_icon.png"
+                       VerticalOptions="Center" />
+                <Label FontSize="16"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="Sportelli"
+                       VerticalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout Grid.Column="2"
+                         Orientation="Vertical"
+                         Padding="10,0,10,30">
+                <Image HeightRequest="30"
+                       HorizontalOptions="Center"
+                       Source="Images/tutorial_icon.png"
+                       VerticalOptions="Center" />
+                <Label FontSize="16"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="Tutorial"
+                       VerticalOptions="Center" />
+            </StackLayout>
+
+            <StackLayout Grid.Column="3"
+                         Orientation="Vertical"
+                         Padding="10,0,10,30">
+                <Image HeightRequest="30"
+                       HorizontalOptions="Center"
+                       Source="Images/wallet_icon.png"
+                       VerticalOptions="Center" />
+                <Label FontSize="16"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       Text="Wallet"
+                       VerticalOptions="Center" />
+            </StackLayout>
+
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>
